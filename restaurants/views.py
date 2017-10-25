@@ -1,9 +1,19 @@
 from django.http import HttpResponse
 
 
-# from django.shortcuts import render
-
-
 def home(request):
-    return HttpResponse("hello")
-    # return render(request, "home.html", {})
+    user_name = 'gulci'
+
+    html_template = f'''
+    <!doctype html>
+    <html>
+    <head>
+    <title>hello</title>
+    </head>
+    <body>
+    <p>hello {user_name}</p>
+    </body>
+    </html>
+    '''
+
+    return HttpResponse(html_template)
