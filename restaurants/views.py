@@ -1,20 +1,22 @@
-import datetime
-
 from django.shortcuts import render
 
 
 def home(request):
-    user_name = 'gulci'
-    title = 'hello'
-    friends = ['karolcia', 'wiki', 'mela', 'emilka']
-    context = {'user_name': user_name, 'title': title, 'friends': friends}
+    title = 'home page'
+    context = {'title': title}
 
     return render(request, 'base.html', context)
 
 
-def page(request):
-    title = 'a page'
-    day = datetime.datetime.now
-    context = {'title': title, 'day': day}
+def contact(request):
+    title = 'contact'
+    context = {'title': title}
 
-    return render(request, 'page.html', context)
+    return render(request, 'contact.html', context)
+
+
+def about(request):
+    title = 'about'
+    context = {'title': title}
+
+    return render(request, 'about.html', context)
