@@ -2,38 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>hello</title>
+    <title>{{ title }}</title>
 </head>
 <body>
 {% if user_name %}
     <p>hello {{ user_name }}</p>
 {% endif %}
-<ul>
-    <strong>Your friends:</strong>
-    {% for friend in friends %}
-        <li>{{ friend|upper }}</li>
-    {% endfor %}
-</ul>
+{% if friends %}
+    <ul>
+        <strong>Your friends:</strong>
+        {% for friend in friends %}
+            <li>{{ friend|upper }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% block page %}
+    <p>Custom page:</p>
+{% endblock %}
 </body>
 </html>
 <h2>Raw template</h2>
 {% verbatim %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>hello</title>
-</head>
-<body>
 {% if user_name %}
 <p>hello {{ user_name }}</p>
 {% endif %}
-<ul>
-    <strong>Your friends:</strong>
-    {% for friend in friends %}
-    <li>{{ friend|upper }}</li>
-    {% endfor %}
-</ul>
-</body>
-</html>
 {% endverbatim %}
