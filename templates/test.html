@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title_head %}{{ block.super }} || test{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container">
+        <p>welcome to the test page</p>
+    </div>
+{% endblock %}
