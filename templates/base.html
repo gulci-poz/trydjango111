@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title_head %}restaurants{% endblock %}</title>
+    {% include "snippets/css.html" %}
 </head>
 <body>
-{% block page %}
-    <div id="navigation">
-        <a href="/">HOME</a>
-        <a href="/contact">CONTACT</a>
-        <a href="/about">ABOUT</a>
-    </div>
-{% endblock %}
-{{ title }}
+<div id="container">
+    {% include "snippets/nav.html" %}
+    {% block content %}
+        <div class="container">
+            {{ title }}
+        </div>
+    {% endblock %}
+    {% include "snippets/js.html" %}
+</div>
 </body>
 </html>

@@ -4,5 +4,8 @@
 
 {% block content %}
     {{ block.super }}
-    {{ title }}
+    <div class="container">
+        <p>welocme to {{ title }}</p>
+        {% include "snippets/sidebar.html" %}
+    </div>
 {% endblock %}
