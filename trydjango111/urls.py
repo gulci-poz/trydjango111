@@ -3,7 +3,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 from restaurants.views import (
-    RestaurantListView
+    RestaurantListView,
+    RestaurantDetailView,
 )
 
 urlpatterns = [
@@ -12,5 +13,6 @@ urlpatterns = [
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^restaurants/$', RestaurantListView.as_view()),
-    url(r'^restaurants/(?P<slug>\w+)/$', RestaurantListView.as_view()),
+    url(r'^restaurants/(?P<rest_id>\w+)/$', RestaurantDetailView.as_view()),
+    # url(r'^restaurants/(?P<slug>\w+)/$', RestaurantListView.as_view()),
 ]
