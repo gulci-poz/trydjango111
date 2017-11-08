@@ -1,4 +1,5 @@
 from restaurants.models import RestaurantLocation
+from restaurants.utils import unique_slug_generator
 
 restaurants = RestaurantLocation.objects.all()
 
@@ -33,3 +34,6 @@ new_restaurant = RestaurantLocation.objects.create(name='Tivoli', location='Pozn
 print(new_restaurant.timestamp)
 
 restaurants_qs = RestaurantLocation.objects.filter(category__iexact='italian').exclude(name__icontains='ll')
+
+obj = RestaurantLocation.objects.get(id=1)
+print(unique_slug_generator(obj))
